@@ -1,27 +1,32 @@
 
-
-const peso=80
-const altura = 170
-
-function calcularIMC(peso,altura){
-    const imc = peso / (altura ** 2);
+function calcularIMC(pesoJ, alturaJ){
+    const imc = pesoJ / alturaJ **2;
+    console.log("Tu indice de masa corporal es", imc);
     return imc
 }
 
-function interIMC(imc){
+const interIMC = (imc) => {
 
-    if(imc < 18.5){
+    if(isNaN(imc)){
+        console.log("Error los valores iniciales no son validos.")
+    }
+     else if(imc < 18.5){
         console.log("Bajo Peso");
     } else if(imc < 24.9 || imc >= 18.5){
        console.log("Peso Saludable");
     } else if(imc < 29.9 || imc >= 25){
         console.log("Sobrepreso");
     }  else if (imc >= 30){
-        console.log("Obesidad")
+        console.log("Obesidad");
+    }else{
+        console.log("No se encontro valores");
     }
 }
 
+    const peso = 71;
+    const altura = 1.70;
 
-    let imc = calcularIMC(peso, altura)
-    console.log("su imc es: ", imc );
-    console.log("Resultado: ", interIMC(imc)); 
+    const imcJeny = calcularIMC("70kg", "1.60");
+
+    interIMC(imcJeny);
+    
